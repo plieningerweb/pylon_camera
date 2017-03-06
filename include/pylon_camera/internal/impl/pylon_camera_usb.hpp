@@ -73,6 +73,14 @@ bool PylonUSBCamera::applyCamSpecificStartupSettings(const PylonCameraParameter&
         // UserSetSelector_Default overrides Software Trigger Mode !!
         cam_->TriggerSource.SetValue(Basler_UsbCameraParams::TriggerSource_Software);
         cam_->TriggerMode.SetValue(Basler_UsbCameraParams::TriggerMode_On);
+        
+        // set flash window output
+        cam_->LineSelector.SetValue(Basler_UsbCameraParams::LineSelector_Line2);
+        cam_->LineSource.SetValue(Basler_UsbCameraParams::LineSource_FlashWindow);
+        cam_->LineInverter.SetValue(true);
+        // not sure if neccessary
+        // Set the global reset release shutter mode
+        //cam_->SensorShutterMode.SetValue(SensorShutterMode_GlobalReset);
 
          /* Thresholds for the AutoExposure Funcitons:
           *  - lower limit can be used to get rid of changing light conditions
