@@ -76,7 +76,8 @@ bool PylonUSBCamera::applyCamSpecificStartupSettings(const PylonCameraParameter&
         
         // set flash window output
         ROS_INFO_STREAM("Set Line2 to flash window and inverted");
-        cam_->LineSelector.SetValue(Basler_UsbCameraParams::LineSelector_Line2);
+        cam_->LineSelector.SetValue(Basler_UsbCameraParams::LineSelector_Line2);        
+        cam_->LineMode.SetValue(Basler_UsbCameraParams::LineMode_Output);
         cam_->LineSource.SetValue(Basler_UsbCameraParams::LineSource_FlashWindow);
         cam_->LineInverter.SetValue(true);
         // not sure if neccessary
