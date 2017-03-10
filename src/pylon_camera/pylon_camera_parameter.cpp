@@ -269,13 +269,6 @@ void PylonCameraParameter::validateParameterSet(const ros::NodeHandle& nh)
         exposure_given_ = false;
     }
 
-    if ( gain_given_ && ( gain_ < 0.0 || gain_ > 1.0 ) )
-    {
-        ROS_WARN_STREAM("Desired gain (in percent) not in allowed range! "
-                << "Gain = " << gain_ << ". Will reset it to default value!");
-        gain_given_ = false;
-    }
-
     if ( brightness_given_ && ( brightness_ < 0.0 || brightness_ > 255 ) )
     {
         ROS_WARN_STREAM("Desired brightness not in allowed range [0 - 255]! "
