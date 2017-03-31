@@ -82,8 +82,8 @@ bool PylonUSBCamera::applyCamSpecificStartupSettings(const PylonCameraParameter&
         cam_->LineInverter.SetValue(true);
         
         // Set the global reset release shutter mode
-        ROS_INFO_STREAM("Set ShutterMode to GlobalReset");        
-        cam_->SensorShutterMode.SetValue(Basler_UsbCameraParams::SensorShutterMode_GlobalReset);
+        //ROS_INFO_STREAM("Set ShutterMode to GlobalReset");        
+        //cam_->SensorShutterMode.SetValue(Basler_UsbCameraParams::SensorShutterMode_GlobalReset);
         
 
          /* Thresholds for the AutoExposure Funcitons:
