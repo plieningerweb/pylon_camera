@@ -19,6 +19,8 @@ install-script: |
     pkgarch="arm64"
   elif [ "$arch" == "x86_64" ]; then
     pkgarch="amd64"
+  elif [ "$arch" == "aarch64" ]; then
+    pkgarch="arm64"
   else
     pkgarch="i386"
   fi
